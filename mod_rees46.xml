@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<!-- Названия модуля -->
+	<name>rees46</name>
+	<!-- Следующие элементы являются не обязательными,
+			информация об авторе, копирайте и т.п. -->
+	<creationDate>November 2014</creationDate>
+	<author>Sergey Odintsov</author>
+	<authorEmail>sergey.odintsov@mkechinov.ru</authorEmail>
+	<authorUrl>http://mkechinov.ru</authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<!--  Версия модуля запишется в БД таблица extension -->
+	<version>0.0.1</version>
+	<!-- Описание, не обязательно, по умолчанию использеуется имя модуля -->
+	<description>Rees46 description</description>
+
+	<!-- Обратите внимание на атрибут folder, он указывает из
+					 какой директории будут копироваться файлы  -->
+	<files>
+		<filename module="mod_rees46">mod_rees46.php</filename>
+		<filename>goods.php</filename>
+	</files>
+	<params>
+		<param name="rees46_shop_id" type="text" default="" label="SHOP ID" description="" />
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="rees46_shop_id" type="text" default="" label="SHOP ID" description="" />
+			</fieldset>
+		</fields>
+	</config>
+</install>
