@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install type="module" version="1.5.0" method="upgrade">
 	<!-- Названия модуля -->
-	<name>rees46</name>
+	<name>mod_rees46</name>
 	<!-- Следующие элементы являются не обязательными,
 			информация об авторе, копирайте и т.п. -->
 	<creationDate>November 2014</creationDate>
@@ -19,6 +19,7 @@
 					 какой директории будут копироваться файлы  -->
 	<files>
 		<filename module="mod_rees46">mod_rees46.php</filename>
+		<filename>mod_rees46.xml</filename>
 		<filename>goods.php</filename>
 	</files>
 	<params>
