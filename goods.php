@@ -65,7 +65,7 @@ if( JRequest::getString("id") ) {
 						</div>
 					</div>
 					<?
-				} else {
+				} elseif( $params->get('rees46_shop_secret', '') && $params->get('rees46_shop_id', '') ) {
 					?>
 					<script>jQuery.get('http://api.rees46.com/import/disable?shop_id=<?= $params->get('rees46_shop_id', '') ?>&shop_secret=<?= $params->get('rees46_shop_secret', '') ?>&item_ids=<?= $id ?>')</script>
 				<?
