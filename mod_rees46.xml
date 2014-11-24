@@ -24,11 +24,13 @@
 	</files>
 	<params>
 		<param name="rees46_shop_id" type="text" default="" label="SHOP ID" description="" />
+		<param name="rees46_shop_secret" type="text" default="" label="SHOP SECRET" description="" />
 	</params>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="rees46_shop_id" type="text" default="" label="SHOP ID" description="" />
+				<field name="rees46_shop_secret" type="text" default="" label="SHOP SECRET" description="" />
 			</fieldset>
 		</fields>
 	</config>

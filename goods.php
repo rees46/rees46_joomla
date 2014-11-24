@@ -20,6 +20,11 @@ JFactory::getApplication('site')->initialise();
 if (!class_exists( 'VmConfig' )) require(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_virtuemart'.DS.'helpers'.DS.'config.php');
 if (!class_exists('VmImage')) require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'image.php'); //dont remove that file it is actually in every view except the state view
 
+jimport('joomla.application.module.helper'); //подключили класс
+$module = JModuleHelper::getModule('rees46');
+$params = new JRegistry();
+$params->loadString($module->params);
+
 //Ajax code
 
 /**
@@ -60,6 +65,10 @@ if( JRequest::getString("id") ) {
 						</div>
 					</div>
 					<?
+				} else {
+					?>
+					<script>jQuery.get('http://api.rees46.com/import/disable?shop_id=<?= $params->get('rees46_shop_id', '') ?>&shop_secret=<?= $params->get('rees46_shop_secret', '') ?>&item_ids=<?= $id ?>')</script>
+				<?
 				}
 			}
 		?>
