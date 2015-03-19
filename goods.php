@@ -51,17 +51,17 @@ if( JRequest::getString("id") ) {
 					<div class="recommended-item">
 						<? if( $product->images ): ?>
 						<div class="recommended-item-photo">
-							<a href="<?= str_ireplace("/modules/mod_rees46", "", $product->link) ?>">
-								<img class="item_img" src="/<?= $product->images[0]->getThumbUrl() ?>" alt="<?= $product->product_name ?>">
+							<a href="<?= str_ireplace("/modules/mod_rees46", "", $product->link) ?>?recommended_by=<?= JRequest::getString("recommended_by") ?>">
+								<?= str_replace("/modules/mod_rees46", "", $product->images[0]->displayMediaThumb('style="margin-right: 10px; margin-bottom: 10px; float: left;"', false, " ", true, false, false)) ?>
 							</a>
 						</div>
 						<? endif ?>
 						<div class="recommended-item-title">
-							<a href="<?= str_ireplace("/modules/mod_rees46", "", $product->link) ?>"><?= $product->product_name ?></a>
+							<a href="<?= str_ireplace("/modules/mod_rees46", "", $product->link) ?>?recommended_by=<?= JRequest::getString("recommended_by") ?>"><?= $product->product_name ?></a>
 						</div>
 						<div class="recommended-item-price"><?= $currency->createPriceDiv('salesPrice', '', $product->prices, TRUE); ?></div>
 						<div class="recommended-item-action">
-							<a href="<?= str_ireplace("/modules/mod_rees46", "", $product->link) ?>">Подробнее</a>
+							<a href="<?= str_ireplace("/modules/mod_rees46", "", $product->link) ?>?recommended_by=<?= JRequest::getString("recommended_by") ?>">Подробнее</a>
 						</div>
 					</div>
 					<?

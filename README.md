@@ -56,3 +56,21 @@
 			"items" => $rees46_items,
 			"order_id" => $orderDetails['details']['BT']->order_number
 		)), time() + 86400, "/");
+
+* Добавляем виджеты в описание продукта. В конце файла `/components/com_virtuemart/views/productdetails/tmpl/default.php` добавляем следующие строки:
+
+		<span class="rees46-recommend-product-categories" data-id="<?= implode(',', $this->product->categories) ?>"></span>
+		<div id="rees46_also_bought" class="rees46 rees46-recommend" data-id="<?= $this->product->virtuemart_product_id ?>" style="clear: both"></div>
+		<div id="rees46_similar" class="rees46 rees46-recommend" data-id="<?= $this->product->virtuemart_product_id ?>" style="clear: both"></div>
+		<div id="rees46_interesting" class="rees46 rees46-recommend" data-id="<?= $this->product->virtuemart_product_id ?>" style="clear: both"></div>
+
+* Добавляем виджеты в категорию. В конец файла `/components/com_virtuemart/views/category/tmpl/default.php` добавляем следующие строки:
+
+		<div id="rees46_popular" class="rees46 rees46-recommend" data-category="<?= $this->category->virtuemart_category_id ?>"></div>
+		<div id="rees46_recently_viewed" class="rees46 rees46-recommend"></div>
+		<div id="rees46_interesting" class="rees46 rees46-recommend" data-category="<?= $this->category->virtuemart_category_id ?>"></div>
+		
+* Добавляем виджет в карзину. В конец файла `/components/com_sttvmorder/view/cart/tmpl/default_pricelist.php` добавляем следующие строки:
+
+		<div id="rees46_see_also" class="rees46 rees46-recommend" data-cart="<?= implode(',', array_map(function($n) {return $n->virtuemart_product_id;}, $this->cart->products)) ?>"></div>
+		
